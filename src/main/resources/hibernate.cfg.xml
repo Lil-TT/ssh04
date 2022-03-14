@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!--  mysql账户名  -->
+    <property name="connection.username">root</property>
+
+    <!--  mysql密码  -->
+    <property name="connection.password">z123</property>
+
+    <!--  mysql驱动  -->
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+    <!--  mysql连接URL  -->
+    <property name="connection.url">jdbc:mysql:///cityoa?useUnicode=true&amp;characterEncoding=UTF-8</property>
+
+    <!--  c3p0连接池 -->
+    <property name="hibernate.c3p0.max_size">5</property>
+    <property name="hibernate.c3p0.min_size">1</property>
+    <property name="c3p0.timeout">5000</property>
+
+    <!--  格式化sql语句  -->
+    <property name="format_sql">true</property>
+
+    <!--  mysql方言  -->
+    <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+    <!--  显示mysql语句  -->
+    <property name="show_sql">true</property>
+
+    <!--  根据需要创建数据库  -->
+    <property name="hbm2ddl.auto">update</property>
+
+    <!--Java注释方式实现映射-->
+    <mapping class="com.city.erp.model.ProductcategoryEntity"/>
+    <mapping  class="com.city.erp.model.UfkProductEntity"/>
+  </session-factory>
+</hibernate-configuration>
